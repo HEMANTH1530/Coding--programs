@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    int findKRotation(vector<int> &arr) {
+        int minVal = 100000000;
+        int n = arr.size();
+        
+        // Find minimum value
+        for(int i = 0; i < n; i++)
+        {
+            if(arr[i] < minVal)
+            {
+                minVal = arr[i];
+            }
+        }
+        
+        // Find index of minimum value
+        for(int j = 0; j < n; j++)
+        {
+            if(arr[j] == minVal)
+            {
+                return j;
+            }
+        }
+        
+        return 0; // fallback (should not happen)
+    }
+};
